@@ -1,4 +1,4 @@
-export const menuItems = {
+export const menuItemNames = {
     mainMenu: [
         "Anasayfa",
         "Nasıl Çalışır ?",
