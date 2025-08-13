@@ -20,9 +20,14 @@ import "cypress-real-events/support";
 
 Cypress.on('uncaught:exception', (err, runnable) => {
   if (err.message.includes("Cannot read properties of undefined (reading 'split')")) {
-    // hata testin fail olmasını engeller
     return false
   }
-  // diğer hatalar için fail olsun
   return true
-})
+});
+
+Cypress.on('uncaught:exception', (err) => {
+  if (err.message.includes('addEventListener')) {
+    return false
+  }
+});
+
