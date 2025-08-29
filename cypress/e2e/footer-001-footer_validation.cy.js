@@ -1,9 +1,9 @@
 /// <reference types="cypress" />
 
-import Footer from "../../pages/Footer";
-import { footerMenu } from "../../support/footer_menu";
-import { socialLinks } from "../../support/social_links";
-import PageCommonItems from "../../pages/PageCommonItems";
+import Footer from "../pages/Footer";
+import { footerMenu } from "../support/footer_menu";
+import { socialLinks } from "../support/social_links";
+import PageCommonItems from "../pages/PageCommonItems";
 
 
 describe('Footer Comprehensive Validation', () => {
