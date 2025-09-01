@@ -13,13 +13,13 @@ describe('Home Page and Main Menu Navigation Functionality Validation @smoke', (
     });
 
     it('Logo validation', () => {
-        MainMenu.logo
+        MainMenu.getlogo()
             .should('have.attr', 'src', '/assets/img/logo/logo-black.png')
             .and('be.visible');
     });
 
     it("Menu Validation", () => {
-        MainMenu.getmenuItems
+        MainMenu.getmenuItems()
             .then(($elements) => {
                 const actualMenuItems = [...$elements].map((el) => el.textContent);
 
@@ -30,7 +30,7 @@ describe('Home Page and Main Menu Navigation Functionality Validation @smoke', (
     });
 
     it("Submenu Validation", () => {
-        MainMenu.getsubmenuItems
+        MainMenu.getsubmenuItems()
             .then(($elements) => {
                 const actualSubmenuItems = [...$elements].map((el) => el.textContent);
 
@@ -42,7 +42,7 @@ describe('Home Page and Main Menu Navigation Functionality Validation @smoke', (
 
     Object.entries(menuLinks.mainMenu).forEach(([menuName, { url, header }]) => {
         it(`Validate "${menuName}" Menu Navigation`, () => {
-            MainMenu.getmenuItems
+            MainMenu.getmenuItems()
                 .contains(menuName).click();
             cy.url().should('eq', url);
 
@@ -55,9 +55,9 @@ describe('Home Page and Main Menu Navigation Functionality Validation @smoke', (
 
     Object.entries(menuLinks.submenu).forEach(([submenuName, { url, header }]) => {
         it(`Validate "${submenuName}" Submenu Navigation`, () => {
-            MainMenu.getmenuItems.contains('Hizmetlerimiz').trigger('mouseover').realHover();
+            MainMenu.getmenuItems().contains('Hizmetlerimiz').trigger('mouseover').realHover();
 
-            MainMenu.getsubmenuItems
+            MainMenu.getsubmenuItems()
                 .contains(submenuName).click();
             cy.url().should('eq', url);
 

@@ -13,14 +13,14 @@ describe('Footer Comprehensive Validation', () => {
     });
 
     it('Footer logo is visible with correct src and alt attributes', () => {
-        Footer.getfooterLogo
+        Footer.getfooterLogo()
             .should('be.visible')
             .and('have.attr', 'src', 'https://www.pedogist.com/assets/img/logo/logo-black.png')
             .and('have.attr', 'alt', 'footer-logo');
     });
 
     it('Iyzico image is visible', () => {
-        Footer.getiyxicoLogo
+        Footer.getiyxicoLogo()
             .should('be.visible')
             .and(($img) => {
                 expect($img.attr('src')).to.match(/^https?:\/\//);
@@ -28,10 +28,10 @@ describe('Footer Comprehensive Validation', () => {
     });
 
     it('ETBIS verification image and link exist', () => {
-        Footer.getetbisURL
+        Footer.getetbisURL()
             .should('have.attr', 'href')
             .and('include', 'etbis.eticaret.gov.tr');
-        Footer.getetbisQR
+        Footer.getetbisQR()
             .should('be.visible')
             .and(($img) => {
                 expect($img.attr('src')).to.match(/^data:image\/jpeg/);
@@ -40,10 +40,10 @@ describe('Footer Comprehensive Validation', () => {
 
     socialLinks.forEach(({ social, index, href, iconClass }) => {
         it(`Social media icon ${social} has correct link and is visible`, () => {
-            Footer.getsocialIcons.eq(index)
+            Footer.getsocialIcons().eq(index)
                 .should('have.attr', 'href', href);
 
-            Footer.getsocialIcons.eq(index).find('i')
+            Footer.getsocialIcons().eq(index).find('i')
                 .should('have.class', iconClass);
         });
     });
@@ -55,7 +55,7 @@ describe('Footer Comprehensive Validation', () => {
             });
 
             it('All links have correct href and visible text', () => {
-                Footer.getfooterMenuItems(selector).should('have.length', expectedLinks.length);
+                Footer.footerMenuItems(selector).should('have.length', expectedLinks.length);
 
                 expectedLinks.forEach(({ text, href }, i) => {
                     Footer.footerMenuItems(selector).eq(i).should('have.text', text).and('have.attr', 'href', href);
@@ -65,7 +65,7 @@ describe('Footer Comprehensive Validation', () => {
             it('All link have to corrent page', () => {
                 expectedLinks.forEach(({ h2 }, i) => {
                     Footer.footerMenuItems(selector).eq(i).click();
-                    PageCommonItems.pageTitle.should('have.text', h2);
+                    PageCommonItems.getpageTitle().should('have.text', h2);
                     cy.go('back');
                 });
             })
@@ -73,7 +73,7 @@ describe('Footer Comprehensive Validation', () => {
     });
 
     it('Warning text is present and visible', () => {
-        Footer.getfooterWarningMessage
+        Footer.getfooterWarningMessage()
             .should('be.visible')
             .and('contain.text', 'Eğer kriz anında olduğunuzu ya da başka bir kişinin tehlikede olduğunu düşünüyorsanız');
     });
