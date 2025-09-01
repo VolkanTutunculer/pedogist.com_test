@@ -1,14 +1,14 @@
 class MainMenu {
 
-  get logo() {
+  getlogo() {
     return cy.get("img[class='logo'][title*='Pedogist']");
   }
 
-  get menuItems() {
+  getmenuItems() {
     return cy.get("#mobile-menu a");
   }
 
-  get submenuItems() {
+  getsubmenuItems() {
     return cy.get("ul.sub-menu li a");
   }
 

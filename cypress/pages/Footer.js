@@ -1,22 +1,22 @@
 class Footer {
 
-    get footerLogo() {
+    getfooterLogo() {
         return cy.get('footer .footer-img img');
     }
 
-    get iyxicoLogo() {
+    getiyxicoLogo() {
         return cy.get('footer .iyzico img');
     }
 
-    get etbisQR() {
+    getetbisQR() {
         return cy.get('#ETBIS img');
     }
 
-    get etbisURL() {
+    getetbisURL() {
         return cy.get('#ETBIS a')
     }
 
-    get socialIcons() {
+    getsocialIcons() {
         return cy.get('footer .footer-icon a')
     }
 
@@ -28,7 +28,7 @@ class Footer {
         return cy.get(`footer ${selector} ul li a`)
     }
 
-    get footerWarningMessage() {
+    getfooterWarningMessage() {
         return cy.get('footer center')
     }
 

@@ -5,7 +5,7 @@ import LoginPage from "../../pages/LoginPage";
 describe("Login Page Items Validation", () => {
     beforeEach(() => {
         cy.visit("/");
-        LoginPage.loginPage.click();
+        LoginPage.getloginPage.click();
     });
 
     it("Login Page URL validation", () => {
@@ -14,33 +14,33 @@ describe("Login Page Items Validation", () => {
 
     describe("Left Wrapper", () => {
         it("Login image validation", () => {
-            LoginPage.loginImage
+            LoginPage.getloginImage
                 .should("have.attr", "src", "/assets/reg/img/login.png")
                 .and("be.visible");
         });
 
         it("information sentence validation under login image", () => {
-            LoginPage.leftWrapperText.invoke("text").then((actualText) => {
+            LoginPage.getleftWrapperText.invoke("text").then((actualText) => {
                 const expectedText = LoginPage.expectedLoginInfoText;
                 expect(actualText.replace(/\s+/g, " ").trim()).to.eq(expectedText);
             });
         });
 
         it("Intext -buradan- register button validation", () => {
-            LoginPage.buradanRegisterButtonInText
+            LoginPage.getburadanRegisterButtonInText
                 .should("have.text", "buradan")
                 .and("have.attr", "href", "https://www.pedogist.com/kayit")
                 .and("be.visible");
         });
 
         it("Return HomePage Button Validation", () => {
-            LoginPage.retrunHomePageButton
+            LoginPage.getretrunHomePageButton
                 .should("have.text", "Anasayfaya Dön")
                 .and("have.attr", "href", "/");
         });
 
         it("Return HomePage button function validation", () => {
-            LoginPage.retrunHomePageButton.click({ force: true });
+            LoginPage.getretrunHomePageButton.click({ force: true });
 
             cy.url().should("eq", "https://www.pedogist.com/");
         });
@@ -48,17 +48,17 @@ describe("Login Page Items Validation", () => {
 
     describe("Right Wrapper", () => {
         it("should display main login text", () => {
-            LoginPage.mainLoginText
+            LoginPage.getmainLoginText
                 .should("have.text", "Giriş yapmak için bilgilerinizi doldurunuz.")
                 .and("be.visible");
         });
 
         it("should display label for email input", () => {
-            LoginPage.labels.contains("E-Mail Adresiniz").should("be.visible");
+            LoginPage.getlabels.contains("E-Mail Adresiniz").should("be.visible");
         });
 
         it("should have email input", () => {
-            LoginPage.emailInputArea
+            LoginPage.getemailInputArea
                 .should("exist")
                 .and("be.visible")
                 .and("have.attr", "type", "text")
@@ -66,10 +66,10 @@ describe("Login Page Items Validation", () => {
         });
 
         it("should display label for password input", () => {
-            LoginPage.labels.contains("Şifreniz").should("be.visible");
+            LoginPage.getlabels.contains("Şifreniz").should("be.visible");
         });
         it("should have password input", () => {
-            LoginPage.passwordInputArea
+            LoginPage.getpasswordInputArea
                 .should("exist")
                 .and("be.visible")
                 .and("have.attr", "type", "password")
@@ -77,7 +77,7 @@ describe("Login Page Items Validation", () => {
         });
 
         it('should have "Şifremi Unuttum?" link', () => {
-            LoginPage.forgetPasswordButton
+            LoginPage.getforgetPasswordButton
                 .should("be.visible")
                 .and("have.text", "Şifremi Unuttum?")
                 .and("have.attr", "href", "https://www.pedogist.com/sifremi-unuttum");
@@ -86,28 +86,28 @@ describe("Login Page Items Validation", () => {
         it('should have "Beni Hatırla" checkbox', () => {
             cy.get('.container_check .checkmark').should('be.visible')
 
-            LoginPage.rememberCheckBOx
+            LoginPage.getrememberCheckBOx
                 .should("exist")
                 .and("have.attr", "type", "checkbox")
                 .check({ force: true });
         });
 
         it("should have Google login button", () => {
-            LoginPage.googleSignInButton
+            LoginPage.getgoogleSignInButton
                 .should("be.visible")
                 .and("have.text", "Google")
                 .and("have.attr", "href", "https://www.pedogist.com/auth/google");
         });
 
         it('should have "Kayıt Ol" link', () => {
-            LoginPage.registerButton
+            LoginPage.getregisterButton
                 .should("be.visible")
                 .and("contain.text", "Kayıt Ol")
                 .and("have.attr", "href", "https://www.pedogist.com/kayit");
         });
 
         it('should have "Giriş Yap" submit button', () => {
-            LoginPage.loginButton
+            LoginPage.getloginButton
                 .should("be.visible")
                 .and("have.text", "Giriş Yap");
         });
