@@ -13,14 +13,14 @@ describe('Footer Comprehensive Validation', () => {
     });
 
     it('Footer logo is visible with correct src and alt attributes', () => {
-        Footer.footerLogo
+        Footer.getfooterLogo
             .should('be.visible')
             .and('have.attr', 'src', 'https://www.pedogist.com/assets/img/logo/logo-black.png')
             .and('have.attr', 'alt', 'footer-logo');
     });
 
     it('Iyzico image is visible', () => {
-        Footer.iyxicoLogo
+        Footer.getiyxicoLogo
             .should('be.visible')
             .and(($img) => {
                 expect($img.attr('src')).to.match(/^https?:\/\//);
@@ -28,10 +28,10 @@ describe('Footer Comprehensive Validation', () => {
     });
 
     it('ETBIS verification image and link exist', () => {
-        Footer.etbisURL
+        Footer.getetbisURL
             .should('have.attr', 'href')
             .and('include', 'etbis.eticaret.gov.tr');
-        Footer.etbisQR
+        Footer.getetbisQR
             .should('be.visible')
             .and(($img) => {
                 expect($img.attr('src')).to.match(/^data:image\/jpeg/);
@@ -40,10 +40,10 @@ describe('Footer Comprehensive Validation', () => {
 
     socialLinks.forEach(({ social, index, href, iconClass }) => {
         it(`Social media icon ${social} has correct link and is visible`, () => {
-            Footer.socialIcons.eq(index)
+            Footer.getsocialIcons.eq(index)
                 .should('have.attr', 'href', href);
 
-            Footer.socialIcons.eq(index).find('i')
+            Footer.getsocialIcons.eq(index).find('i')
                 .should('have.class', iconClass);
         });
     });
@@ -55,7 +55,7 @@ describe('Footer Comprehensive Validation', () => {
             });
 
             it('All links have correct href and visible text', () => {
-                Footer.footerMenuItems(selector).should('have.length', expectedLinks.length);
+                Footer.getfooterMenuItems(selector).should('have.length', expectedLinks.length);
 
                 expectedLinks.forEach(({ text, href }, i) => {
                     Footer.footerMenuItems(selector).eq(i).should('have.text', text).and('have.attr', 'href', href);
@@ -73,7 +73,7 @@ describe('Footer Comprehensive Validation', () => {
     });
 
     it('Warning text is present and visible', () => {
-        Footer.footerWarningMessage
+        Footer.getfooterWarningMessage
             .should('be.visible')
             .and('contain.text', 'Eğer kriz anında olduğunuzu ya da başka bir kişinin tehlikede olduğunu düşünüyorsanız');
     });

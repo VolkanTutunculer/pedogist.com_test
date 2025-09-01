@@ -19,7 +19,7 @@ describe('Home Page and Main Menu Navigation Functionality Validation @smoke', (
     });
 
     it("Menu Validation", () => {
-        MainMenu.menuItems
+        MainMenu.getmenuItems
             .then(($elements) => {
                 const actualMenuItems = [...$elements].map((el) => el.textContent);
 
@@ -30,7 +30,7 @@ describe('Home Page and Main Menu Navigation Functionality Validation @smoke', (
     });
 
     it("Submenu Validation", () => {
-        MainMenu.submenuItems
+        MainMenu.getsubmenuItems
             .then(($elements) => {
                 const actualSubmenuItems = [...$elements].map((el) => el.textContent);
 
@@ -42,7 +42,7 @@ describe('Home Page and Main Menu Navigation Functionality Validation @smoke', (
 
     Object.entries(menuLinks.mainMenu).forEach(([menuName, { url, header }]) => {
         it(`Validate "${menuName}" Menu Navigation`, () => {
-            MainMenu.menuItems
+            MainMenu.getmenuItems
                 .contains(menuName).click();
             cy.url().should('eq', url);
 
@@ -55,9 +55,9 @@ describe('Home Page and Main Menu Navigation Functionality Validation @smoke', (
 
     Object.entries(menuLinks.submenu).forEach(([submenuName, { url, header }]) => {
         it(`Validate "${submenuName}" Submenu Navigation`, () => {
-            MainMenu.menuItems.contains('Hizmetlerimiz').trigger('mouseover').realHover();
+            MainMenu.getmenuItems.contains('Hizmetlerimiz').trigger('mouseover').realHover();
 
-            MainMenu.submenuItems
+            MainMenu.getsubmenuItems
                 .contains(submenuName).click();
             cy.url().should('eq', url);
 

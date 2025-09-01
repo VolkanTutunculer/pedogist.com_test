@@ -1,61 +1,61 @@
 class LoginPage {
-  get loginPage() {
+  getloginPage() {
     return cy.get('a[class="user-btn-sign-in"]');
   }
 
-  get loginImage() {
+  getloginImage() {
     return cy.get('img[class="img-fluid"]');
   }
 
-  get leftWrapperText() {
+  getleftWrapperText() {
     return cy.get('p[class*="mb-2"]');
   }
 
-  get expectedLoginInfoText() {
+  getexpectedLoginInfoText() {
     return "Bilgilerinizi doldurarak güvenli giriş yapabilirsiniz. Hala kayıt olmadıysanız buradan kayıt olabilirsiniz.";
   }
 
-  get buradanRegisterButtonInText() {
+  getburadanRegisterButtonInText() {
     return cy.get('a[class*="cly-hover"]');
   }
 
-  get retrunHomePageButton() {
+  getretrunHomePageButton() {
     return cy.get('a[class*="m-0"]');
   }
 
-  get mainLoginText() {
+  getmainLoginText() {
     return cy.get("h3.main_question");
   }
 
-  get labels() {
+  getlabels() {
     return cy.get("label");
   }
 
-  get emailInputArea() {
+  getemailInputArea() {
     return cy.get('input[name="email"]');
   }
 
-  get passwordInputArea() {
+  getpasswordInputArea() {
     return cy.get('input[name="password"]');
   }
 
-  get forgetPasswordButton() {
+  getforgetPasswordButton() {
     return cy.get("a.text-sm");
   }
 
-  get rememberCheckBOx() {
+  getrememberCheckBOx() {
     return cy.get('input[name="remember"]');
   }
 
-  get googleSignInButton() {
+  getgoogleSignInButton() {
     return cy.get(".sign-gmail a");
   }
 
-  get registerButton() {
+  getregisterButton() {
     return cy.get('div.d-flex a[href*="kayit"]');
   }
 
-  get loginButton() {
+  getloginButton() {
     return cy.get('button[type="submit"]');
   }
 }
