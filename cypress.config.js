@@ -4,6 +4,12 @@ module.exports = defineConfig({
   viewportHeight: 1080,
   viewportWidth: 1920,
   chromeWebSecurity: false,
+
+  env: {
+    APP_USERNAME: process.env.APP_USERNAME,
+    APP_PASSWORD: process.env.APP_PASSWORD
+  },
+
   reporter: 'cypress-mochawesome-reporter',
   e2e: {
     baseUrl: 'https://www.pedogist.com/',
@@ -12,3 +18,4 @@ module.exports = defineConfig({
     },
   },
 });
+ 
