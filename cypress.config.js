@@ -1,5 +1,6 @@
 // cypress.config.js
 const { defineConfig } = require("cypress");
+const registerCypressGrep = require('@cypress/grep');
 
 module.exports = defineConfig({
   // Genel proje ayarları
@@ -24,7 +25,7 @@ module.exports = defineConfig({
       require('cypress-mochawesome-reporter/plugin')(on);
 
       // Cypress-grep plugin'ini çağır
-      require('@cypress/grep/src/plugin')(on, config);
+      registerCypressGrep(on, config);
       
       // En son config objesini geri döndür
       return config;
