@@ -1,4 +1,5 @@
 const { defineConfig } = require("cypress");
+const registerCypressGrep = require('@cypress/grep');
 
 module.exports = defineConfig({
   viewportHeight: 1080,
@@ -15,7 +16,7 @@ module.exports = defineConfig({
     baseUrl: 'https://www.pedogist.com/',
     setupNodeEvents(on, config) {
       require('cypress-mochawesome-reporter/plugin')(on);
-      require('cypress-grep/src/plugin')(config);
+      registerCypressGrep(on, config);
       return config;
     },
   },
