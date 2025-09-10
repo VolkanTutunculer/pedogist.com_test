@@ -1,6 +1,6 @@
 // cypress.config.js
 const { defineConfig } = require("cypress");
-const registerCypressGrep = require('@cypress/grep');
+const registerCypressGrep = require('@cypress/grep/src/plugin');
 
 module.exports = defineConfig({
   // Genel proje ayarları
