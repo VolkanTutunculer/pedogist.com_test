@@ -20,6 +20,7 @@
   "homepage": "https://github.com/VolkanTutunculer/pedogist.com_test#readme",
   "description": "",
   "devDependencies": {
+    "@cypress/grep": "^4.1.1",
     "cypress": "^14.5.3",
     "cypress-mochawesome-reporter": "^4.0.2",
     "cypress-real-events": "^1.14.0",

@@ -1,39 +1,40 @@
-name: End-to-end tests
+name: Smoke Tests
 
 on:
-  push:
   schedule:
-    - cron: "0 10 * * 1" # Run every Monday at 6:00 AM UTC
+    - cron: "0 11 * * *"
 
 jobs:
-  cypress-run:
+  smoke-tests:
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Cypress run
+      - name: Run Smoke Tests
         uses: cypress-io/github-action@v6
         with:
-          command: npm run cy:run
+          browser: chrome
+          command: npx cypress run --env grep=@smoke
 
-      - name: Upload Cypress Report
+      - name: Upload Smoke Report
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: Cypress Reports
+          name: Smoke Report
           path: cypress/reports/html/index.html
           if-no-files-found: ignore
 
-      - name: Deploy Reports
+      - name: Deploy Smoke Report
         if: always()
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GH_PAT }}
           publish_dir: cypress/reports/html
+          destination_dir: smoke
 
-      - name: Add Report Link to Summary
+      - name: Add Smoke Link to Summary
         if: always()
         run: |
-          echo "### 📊 Cypress Test Report" >> $GITHUB_STEP_SUMMARY
-          echo "[View Report](https://volkantutunculer.github.io/pedogist.com_test/index.html)" >> $GITHUB_STEP_SUMMARY
+          echo "### 🚀 Smoke Report" >> $GITHUB_STEP_SUMMARY
+          echo "[View Smoke Report](https://volkantutunculer.github.io/pedogist.com_test/smoke/index.html)" >> $GITHUB_STEP_SUMMARY
