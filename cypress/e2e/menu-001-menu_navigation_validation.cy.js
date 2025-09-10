@@ -3,7 +3,7 @@ import MainMenu from "../pages/MainMenu"
 import { menuItemNames } from "../support/main_menu_nav_items";
 import { menuLinks } from "../support/menu_links_and_headers";
 
-describe('Home Page and Main Menu Navigation Functionality Validation @smoke', () => {
+describe('Home Page and Main Menu Navigation Functionality Validation', { tags: ['regression'] }, () => {
     beforeEach(() => {
         cy.visit('/');
     });

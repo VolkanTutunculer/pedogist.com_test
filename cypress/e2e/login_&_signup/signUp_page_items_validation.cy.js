@@ -3,32 +3,32 @@
 import SignUpPage from "../../pages/SignUpPage";
 
 
-describe("Login Page Items Validation", () => {
+describe("Sign Up Page Items Validation", { tags: ['smoke'] }, () => {
     beforeEach(() => {
         cy.visit("/");
         SignUpPage.getSignUpPage().click();
 
     });
 
-    it("Login Page URL validation", () => {
+    it("Sign Up Page URL validation", () => {
         cy.url().should("eq", "https://www.pedogist.com/kayit");
     });
 
     describe("Left Wrapper", () => {
-        it("Login image validation", () => {
+        it("Sign Up image validation", () => {
             SignUpPage.getloginImage()
                 .should("have.attr", "src", "/assets/reg/img/login.png")
                 .and("be.visible");
         });
 
-        it("information sentence validation under login image", () => {
+        it("information sentence validation under sign up image", () => {
             SignUpPage.getleftWrapperText().invoke("text").then((actualText) => {
                 const expectedText = SignUpPage.getexpectedSignUpInfoText();
                 expect(actualText.replace(/\s+/g, " ").trim()).to.eq(expectedText);
             });
         });
 
-        it("Intext -buradan- register button validation", () => {
+        it("Intext -buradan- login button validation", () => {
             SignUpPage.getburadanLginButtonInText()
                 .should("have.text", "buradan")
                 .and("have.attr", "href", "https://www.pedogist.com/giris")
@@ -49,7 +49,7 @@ describe("Login Page Items Validation", () => {
     });
 
     describe("Right Wrapper", () => {
-        it("should display main login text", () => {
+        it("should display main sign up text", () => {
             SignUpPage.getmainSignUpText()
                 .should("have.text", "Kayıt olmak için bilgilerinizi doldurunuz.")
                 .and("be.visible");
@@ -72,7 +72,7 @@ describe("Login Page Items Validation", () => {
             SignUpPage.getlabels().contains("Şifre").should("be.visible");
         });
 
-        it("should display label for password reenter input", () => {
+        it("should display label for password re-enter input", () => {
             SignUpPage.getlabels().contains("Şifrenizi Doğrulayın").should("be.visible");
         });
 
@@ -131,7 +131,7 @@ describe("Login Page Items Validation", () => {
         });
 
 
-        it("should have Google login button", () => {
+        it("should have Google sign up button", () => {
             SignUpPage.getgoogleSignInButton()
                 .should("be.visible")
                 .and("have.text", "Google")
