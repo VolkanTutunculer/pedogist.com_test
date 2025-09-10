@@ -14,24 +14,22 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import './commands'
-import "cypress-real-events/support";
+import './commands';
+import 'cypress-real-events/support';
 import 'cypress-mochawesome-reporter/register';
+import '@cypress/grep'
+
 
 
 Cypress.on('uncaught:exception', (err, runnable) => {
   if (err.message.includes("Cannot read properties of undefined (reading 'split')")) {
-    return false
+    return false;
   }
-  return true
+  return true;
 });
 
 Cypress.on('uncaught:exception', (err) => {
   if (err.message.includes('addEventListener')) {
-    return false
+    return false;
   }
 });
-
-require('@cypress/grep')()
-
-
