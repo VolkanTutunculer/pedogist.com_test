@@ -11,6 +11,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+          
+      - name: Install dependencies
+        run: npm ci
+
       - name: Run Smoke Tests
         uses: cypress-io/github-action@v6
         with:
