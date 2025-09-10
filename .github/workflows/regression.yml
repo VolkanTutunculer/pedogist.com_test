@@ -23,8 +23,7 @@ jobs:
       - name: Run Regression Tests
         uses: cypress-io/github-action@v6
         with:
-          browser: chrome
-          command: npx cypress run --env grep=@regression
+          command: npx cypress run --browser chrome --env grep=@regression
 
       - name: Upload Regression Report
         if: always()
