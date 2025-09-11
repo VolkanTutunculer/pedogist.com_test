@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-import SignUpPage from "../../pages/SignUpPage";
+import SignUpPage from "../../../pages/SignUpPage";
 
 
 describe("Sign Up Page Items Validation", { tags: ['smoke'] }, () => {
