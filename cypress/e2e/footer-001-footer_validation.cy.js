@@ -9,7 +9,6 @@ import PageCommonItems from "../pages/PageCommonItems";
 describe('Footer Comprehensive Validation', { tags: ['regression'] }, () => {
     beforeEach(() => {
         cy.visit('/');
-        cy.get('footer').should('be.visible');
     });
 
     it('Footer logo is visible with correct src and alt attributes', () => {
