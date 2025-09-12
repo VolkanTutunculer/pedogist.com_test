@@ -1,6 +1,9 @@
 // cypress.config.js
 const { defineConfig } = require("cypress");
 const registerCypressGrep = require('@cypress/grep/src/plugin');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 module.exports = defineConfig({
   viewportHeight: 1080,

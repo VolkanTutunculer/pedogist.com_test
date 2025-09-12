@@ -58,6 +58,31 @@ class LoginPage {
   getloginButton() {
     return cy.get('button[type="submit"]');
   }
+
+  getErrorMessage(){
+    return cy.get("span.text-danger");
+  }
+
+  enterUsername(username) {
+    if (username) this.getemailInputArea().type(username);
+  }
+
+  enterPassword(password) {
+    if (password) this.getpasswordInputArea().type(password);
+  }
+
+  clikLoginButton() {
+    this.getloginButton().click();
+  }
+
+  login(username, password, click = true) {
+    this.enterUsername(username);
+    if (click) {
+      this.enterPassword(password);
+      this.clikLoginButton();
+    }
+    else this.getpasswordInputArea().type(`${password}{enter}`);
+  }
 }
 
 export default new LoginPage();
