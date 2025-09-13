@@ -24,6 +24,9 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           command: npx cypress run --browser chrome --env grep=@regression
+        env:
+          APP_USERNAME: ${{ secrets.APP_USERNAME}}
+          APP_PASSWORD: ${{ secrets.APP_PASSWORD}}
 
       - name: Upload Regression Report
         if: always()
