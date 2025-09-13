@@ -19,7 +19,7 @@ module.exports = defineConfig({
 
   e2e: {
     baseUrl: 'https://www.pedogist.com/',
-    defaultCommandTimeout: 20000,
+
     setupNodeEvents(on, config) {
       require('cypress-mochawesome-reporter/plugin')(on);
 
