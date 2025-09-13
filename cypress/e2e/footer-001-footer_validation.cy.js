@@ -65,7 +65,7 @@ describe('Footer Comprehensive Validation', { tags: ['regression'] }, () => {
                 expectedLinks.forEach(({ h2 }, i) => {
                     Footer.footerMenuItems(selector).eq(i).click();
                     PageCommonItems.getpageTitle().should('have.text', h2);
-                    cy.go('back');
+                    cy.visit('/');
                 });
             })
         });

@@ -1,6 +1,6 @@
 class PageCommonItems {
     getpageTitle() {
-        return cy.get("div[class*=hero-course] h2")
+        return cy.get(".hero-course-1-text h2")
     }
 }
 
