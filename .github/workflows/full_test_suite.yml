@@ -3,8 +3,7 @@ name: Full Test Suite
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 10 * * 1" # Her hafta Pazartesi saat 10:00'da çalışır
-
+    - cron: "0 6 * * *" #Her gün sabah 6:00'da çalışır
 jobs:
   smoke-tests:
     runs-on: ubuntu-24.04
