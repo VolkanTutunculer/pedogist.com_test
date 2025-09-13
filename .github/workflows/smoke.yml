@@ -25,8 +25,8 @@ jobs:
         with:
           command: npx cypress run --browser chrome --env grep=@smoke
         env:
-          APP_USERNAME: ${{ secrets.APP_USERNAME}}
-          APP_PASSWORD: ${{ secrets.APP_PASSWORD}}
+          APP_USERNAME: ${{ vars.APP_USERNAME}}
+          APP_PASSWORD: ${{ vars.APP_PASSWORD}}
 
       - name: Upload Smoke Report
         if: always()
