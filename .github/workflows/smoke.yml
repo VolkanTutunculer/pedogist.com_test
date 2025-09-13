@@ -23,14 +23,14 @@ jobs:
       - name: Run Smoke Tests
         uses: cypress-io/github-action@v6
         with:
-          command: npx cypress run --browser chrome --env grep=@regression
+          command: npx cypress run --browser chrome --env grep=@smoke
 
       - name: Upload Smoke Report
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: Smoke Report
-          path: cypress/reports/html/index.html
+          path: cypress/reports/html/Smoke_index.html
           if-no-files-found: ignore
 
       - name: Deploy Smoke Report
