@@ -72,7 +72,7 @@ describe("Login Functionality Validation", { tags: ['smoke'] }, () => {
         });
 
     });
-    
+
     it("should log in with valid username and password", () => {
         cy.visit("/");
         LoginPage.getloginPage().click();
