@@ -1,9 +1,6 @@
 // cypress.config.js
 const { defineConfig } = require("cypress");
-const registerCypressGrep = require('@cypress/grep/src/plugin');
-const dotenv = require('dotenv');
-
-dotenv.config();
+require("dotenv").config();
 
 module.exports = defineConfig({
   viewportHeight: 1080,
@@ -16,15 +13,20 @@ module.exports = defineConfig({
   },
 
   reporter: 'cypress-mochawesome-reporter',
-
+  reporterOptions: {
+    charts: true,
+    reportPageTitle: 'SmartBear App Test Report',
+    embeddedScreenshots: true,
+    inlineAssets: true,
+    saveAllAttempts: false,
+    overwrite: false
+  },
   e2e: {
     baseUrl: 'https://www.pedogist.com/',
 
     setupNodeEvents(on, config) {
       require('cypress-mochawesome-reporter/plugin')(on);
-
-      registerCypressGrep(on, config);
-      
+      require('@cypress/grep/src/plugin')(config);
       return config;
     },
   },
