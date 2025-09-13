@@ -6,7 +6,7 @@ import { socialLinks } from "../support/social_links";
 import PageCommonItems from "../pages/PageCommonItems";
 
 
-describe('Footer Comprehensive Validation', { tags: ['regression'] }, () => {
+describe('Footer Comprehensive Validation @Regression', () => {
     beforeEach(() => {
         cy.visit('/');
     });

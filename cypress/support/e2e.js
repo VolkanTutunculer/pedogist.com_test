@@ -17,6 +17,9 @@
 import './commands';
 import 'cypress-real-events/support';
 import 'cypress-mochawesome-reporter/register';
+import registerCypressGrep from '@cypress/grep'
+
+registerCypressGrep()
 
 Cypress.on('uncaught:exception', (err, runnable) => {
   if (err.message.includes("Cannot read properties of undefined (reading 'split')")) {

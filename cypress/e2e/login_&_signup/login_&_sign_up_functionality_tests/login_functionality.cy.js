@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 import LoginPage from "../../../pages/LoginPage";
 
-describe("Login Functionality Validation", { tags: ['smoke'] }, () => {
+describe("Login Functionality Validation @Smoke", () => {
     beforeEach(() => {
         cy.visit("/");
         LoginPage.getloginPage().click();

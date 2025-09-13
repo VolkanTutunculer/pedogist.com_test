@@ -3,7 +3,7 @@
 import SignUpPage from "../../../pages/SignUpPage";
 
 
-describe("Sign Up Page Items Validation", { tags: ['smoke'] }, () => {
+describe("Sign Up Page Items Validation @Smoke", () => {
     beforeEach(() => {
         cy.visit("/");
         SignUpPage.getSignUpPage().click();

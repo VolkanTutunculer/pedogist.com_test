@@ -2,7 +2,7 @@
 
 import LoginPage from "../../../pages/LoginPage";
 
-describe("Login Page Items Validation", { tags: ['smoke'] }, () => {
+describe("Login Page Items Validation @Smoke", () => {
     beforeEach(() => {
         cy.visit("/");
         LoginPage.getloginPage().click();
