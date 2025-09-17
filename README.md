@@ -4,8 +4,6 @@
 [![Cypress Tests](https://img.shields.io/badge/Cypress-Tested-green?style=flat-square)](https://www.cypress.io/)  
 [![License](https://img.shields.io/github/license/VolkanTutunculer/pedogist.com_test?style=flat-square)](LICENSE)
 
-
-
 ---
 
 ## 📌 Project Overview
@@ -32,6 +30,8 @@
 ## 📚 Resources
 - Cypress Documentation
 - GitHub Actions Documentation
+
+---
 
 ## ⚡ Author
 Volkan Tutunculer – QA Automation Engineer
