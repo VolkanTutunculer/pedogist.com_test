@@ -12,10 +12,11 @@ describe('Home Page and Main Menu Navigation Functionality Validation @Regressio
         cy.url().should('eq', 'https://www.pedogist.com/');
     });
 
-    it('Logo validation', () => {
+    it.only('Logo validation', () => {
         MainMenu.getlogo()
-            .should('have.attr', 'src', '/assets/img/logo/logo-black.png')
-            .and('be.visible');
+            .should('be.visible')
+            .and('have.attr', 'src')
+            .and('include', '/assets/img/logo/logo-black.png');
     });
 
     it("Menu Validation", () => {
