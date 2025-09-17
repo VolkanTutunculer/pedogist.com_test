@@ -13,7 +13,6 @@
 
 ## 🧪 Features
 - **UI Automation**: Built using Cypress and Page Object Model (POM)  
-- **API Integration Testing**: Validates API endpoints  
 - **Database Validation**: Ensures full end-to-end test accuracy  
 - **Reusable Commands and Utilities**: Custom helpers and fixtures  
 - **Parallel Test Execution**: Optimized regression test runs  
@@ -29,10 +28,8 @@
 ---
 
 ## 📚 Resources
-
 - Cypress Documentation
 - GitHub Actions Documentation
 
 ## ⚡ Author
-
 Volkan Tutunculer – QA Automation Engineer
