@@ -12,7 +12,7 @@ describe('Home Page and Main Menu Navigation Functionality Validation @Regressio
         cy.url().should('eq', 'https://www.pedogist.com/');
     });
 
-    it.only('Logo validation', () => {
+    it('Logo validation', () => {
         MainMenu.getlogo()
             .should('be.visible')
             .and('have.attr', 'src')
