@@ -38,7 +38,7 @@ describe("Sign Up Page Items Validation @Smoke", () => {
         it("Return HomePage Button Validation", () => {
             SignUpPage.getretrunHomePageButton()
                 .should("have.text", "Anasayfaya Dön")
-                .and("have.attr", "href", "/");
+                .and("have.attr", "href", "https://www.pedogist.com");
         });
 
         it("Return HomePage button function validation", () => {
