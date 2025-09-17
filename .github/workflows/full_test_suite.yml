@@ -3,10 +3,10 @@ name: Full Test Suite
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
     branches:
-      - main 
+      - master 
   workflow_dispatch:
   schedule:
     - cron: "0 6 * * *" #Her gün sabah 6:00'da çalışır
