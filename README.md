@@ -1,11 +1,9 @@
 # 🚀 Pedogist Test Automation Project
 
 [![Build Status](https://img.shields.io/github/actions/workflow/status/VolkanTutunculer/pedogist.com_test/full_test_suite.yml?branch=master&style=flat-square)](https://github.com/VolkanTutunculer/pedogist.com_test/actions)  
-[![Cypress Tests](https://img.shields.io/badge/Cypress-Tested-green?style=for-the-badge)](https://www.cypress.io/)  
+[![Cypress Tests](https://img.shields.io/badge/Cypress-Tested-green?style=fflat-square)](https://www.cypress.io/)  
 [![License](https://img.shields.io/github/license/VolkanTutunculer/pedogist.com_test?style=flat-square)](LICENSE)
-<a href="https://github.com/VolkanTutunculer/pedogist.com_test/actions">
-  <img src="https://img.shields.io/github/actions/workflow/status/VolkanTutunculer/pedogist.com_test/full_test_suite.yml?branch=main&style=flat-square" style="border-radius:8px;">
-</a>
+
 
 
 ---
