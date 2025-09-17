@@ -21,6 +21,7 @@ module.exports = defineConfig({
     saveAllAttempts: false,
     overwrite: false
   },
+  
   e2e: {
     baseUrl: 'https://www.pedogist.com/',
 
