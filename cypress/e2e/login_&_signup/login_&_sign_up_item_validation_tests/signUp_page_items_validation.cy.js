@@ -97,7 +97,7 @@ describe("Sign Up Page Items Validation @Smoke", () => {
             SignUpPage.getemailInputArea()
                 .should("exist")
                 .and("be.visible")
-                .and("have.attr", "type", "text")
+                .and("have.attr", "type", "email")
                 .and("have.attr", "required");
         });
 
