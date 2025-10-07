@@ -1,7 +1,7 @@
 class MainMenu {
 
   getlogo() {
-    return cy.get("img[class='logo'][title*='Pedogist']");
+    return cy.get("img[class='img-fluid'][title*='Pedogist']");
   }
 
   getmenuItems() {

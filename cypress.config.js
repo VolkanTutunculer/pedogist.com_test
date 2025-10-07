@@ -15,7 +15,7 @@ module.exports = defineConfig({
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
     charts: true,
-    reportPageTitle: 'SmartBear App Test Report',
+    reportPageTitle: 'Pedogist.com Test Report',
     embeddedScreenshots: true,
     inlineAssets: true,
     saveAllAttempts: false,
