@@ -54,33 +54,35 @@ describe("Home Page Items Validation @Regression", () => {
 
     });
 
-    it("Filter Functionalty Test Each Filter Input & Reset Button ", function () {
-        this.therapists.forEach((therapist) => {
 
-            cy.get('input[name="name"]').clear().type(therapist.name);
-            cy.get('input[name="surname"]').clear().type(therapist.surname);
-            cy.get('select[name="service_id"]').select(therapist.serviceId);
+    //  This removed from home page
+    // it("Filter Functionalty Test Each Filter Input & Reset Button ", function () {
+    //     this.therapists.forEach((therapist) => {
 
-            cy.get('button[type="submit"]').click();
+    //         cy.get('input[name="name"]').clear().type(therapist.name);
+    //         cy.get('input[name="surname"]').clear().type(therapist.surname);
+    //         cy.get('select[name="service_id"]').select(therapist.serviceId);
 
-            cy.get(".member-main-wrapper").first().within(() => {
-                cy.get("h5 a")
-                    .invoke("text")
-                    .then(t => t.replace(/\s+/g, ' ').trim())
-                    .should("equal", therapist.expectedName.replace(/\s+/g, ' ').trim());
+    //         cy.get('button[type="submit"]').click();
 
-                cy.get("span")
-                    .invoke("text")
-                    .then(t => t.replace(/\s+/g, ' ').trim())
-                    .should("equal", therapist.expectedService.replace(/\s+/g, ' ').trim());
-            });
+    //         cy.get(".member-main-wrapper").first().within(() => {
+    //             cy.get("h5 a")
+    //                 .invoke("text")
+    //                 .then(t => t.replace(/\s+/g, ' ').trim())
+    //                 .should("equal", therapist.expectedName.replace(/\s+/g, ' ').trim());
 
-            cy.get('a.btn.btn-otline-primary').click();
-            cy.get('input[name="name"]').should("have.value", "");
-            cy.get('input[name="surname"]').should("have.value", "");
-            cy.get('select[name="service_id"]').should("have.value", "");
-        });
-    });
+    //             cy.get("span")
+    //                 .invoke("text")
+    //                 .then(t => t.replace(/\s+/g, ' ').trim())
+    //                 .should("equal", therapist.expectedService.replace(/\s+/g, ' ').trim());
+    //         });
+
+    //         cy.get('a.btn.btn-otline-primary').click();
+    //         cy.get('input[name="name"]').should("have.value", "");
+    //         cy.get('input[name="surname"]').should("have.value", "");
+    //         cy.get('select[name="service_id"]').should("have.value", "");
+    //     });
+    // });
 
     it("'Nasil Calisir' section picture and test validation", () => {
 
